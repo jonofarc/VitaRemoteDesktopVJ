@@ -1,0 +1,34 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TCPConnection.cs">
+    <Files>
+      <File FileName="TCPConnection.cs" Line="235" Column="6" />
+      <File FileName="Frame.cs" Line="42" Column="3" />
+      <File FileName="AppMain.cs" Line="144" Column="1" />
+      <File FileName="Packet\Packet.cs" Line="31" Column="3" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="VitaRemoteClient" expanded="True">
+            <Node name="Packet" expanded="True" />
+            <Node name="UI" expanded="True" />
+            <Node name="TCPConnection.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="TCPConnection.cs" line="228" offsetX="1092" offsetY="3162" expression="recvBuffer[10213]" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

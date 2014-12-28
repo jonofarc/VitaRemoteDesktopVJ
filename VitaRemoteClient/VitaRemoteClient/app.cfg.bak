@@ -1,0 +1,8 @@
+memory:
+    resource_heap_size : 32768
+    managed_heap_size : 32768
+
+input:
+    gamepad : true
+    touch : true
+    motion : true
