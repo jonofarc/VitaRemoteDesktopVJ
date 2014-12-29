@@ -26,15 +26,14 @@ namespace VitaRemoteClient
 		
 		#region OLD_STUFF
 		
-		public static void sendLeftMouseClick(int x, int y)//Original function for click 
+		public static void sendLeftMouseClick(int x, int y)
 		{
-			Console.WriteLine("click at " + x+","+y);
 			Packet msg = new Packet();
 			msg.ID = 101; 
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
-		/*
+		
 		public static void sendLeftMouseDoubleClick(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -42,7 +41,7 @@ namespace VitaRemoteClient
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
-		
+		/*
 		public static void sendDrag(int x, int y)
 		{
 			Packet msg = new Packet();

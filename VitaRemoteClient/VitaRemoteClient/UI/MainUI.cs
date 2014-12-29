@@ -38,12 +38,15 @@ namespace VitaRemoteClient
 			Console.WriteLine("Tap at " + e.LocalPosition.ToString());
 			SendPacket.sendLeftMouseClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
 		
+			
+			
 		}
 		
 		void DoubleTap (object sender, DoubleTapEventArgs e)
 		{
 			SendPacket.sendDoubleTap((int)e.LocalPosition.X, (int)e.LocalPosition.Y);	
 			Console.WriteLine("DoubleTap at " + e.LocalPosition.ToString());
+			SendPacket.sendLeftMouseDoubleClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
 		}
 		
 		void  Drag (object sender, DragEventArgs e)

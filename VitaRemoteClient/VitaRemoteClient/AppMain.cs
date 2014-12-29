@@ -130,7 +130,7 @@ namespace VitaRemoteClient
 			client.updateImage();
 			
 			drawDesktop();
-			sceneMain.updateLabel("FPSJON: " + mFps.ToString());
+			sceneMain.updateLabel("FPS: " + mFps.ToString());
 
 			UISystem.Render();
 

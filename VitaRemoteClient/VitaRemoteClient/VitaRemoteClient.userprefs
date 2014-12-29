@@ -10,10 +10,10 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Node name="SampleLib" selected="True" />
           <Node name="VitaRemoteClient" expanded="True">
             <Node name="Packet" expanded="True" />
             <Node name="UI" expanded="True" />
-            <Node name="TCPConnection.cs" selected="True" />
           </Node>
         </State>
       </Pad>

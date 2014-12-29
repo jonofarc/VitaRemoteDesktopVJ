@@ -43,8 +43,8 @@ namespace VitaRemoteClient
 			shaderProgram = new ShaderProgram("/Application/shaders/Simple.cgx");
 			shaderProgram.SetUniformBinding(0, "u_WorldMatrix");
 			ImageRect rectScreen = graphics.Screen.Rectangle;
-			Width = 940;//jonathan	orignal value 940
-			Height = 544;//jonathan originla value 544
+			Width = 940;
+			Height = 544;
 
 			vertices[0]=0.0f;	// x0
 			vertices[1]=0.0f;	// y0

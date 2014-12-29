@@ -65,31 +65,31 @@ namespace VitaRemoteServer.Input
         public volatile static uint DOWN = (uint)Keys.Down;
         public volatile static uint LEFT = (uint)Keys.Left;
         public volatile static uint RIGHT = (uint)Keys.Right;
-        public volatile static uint SQUARE = (uint)Keys.J;
-        public volatile static uint CROSS = (uint)Keys.K;
-        public volatile static uint CIRCLE = (uint)Keys.L;
-        public volatile static uint TRIANGLE = (uint)Keys.I;
-        public volatile static uint LTRIGGER = (uint)Keys.U;
-        public volatile static uint RTRIGGER = (uint)Keys.O;
-        public volatile static uint SELECT = (uint)Keys.Space;
-        public volatile static uint START = (uint)Keys.NumPad0;
+        public volatile static uint SQUARE = (uint)Keys.r;
+        public volatile static uint CROSS = (uint)Keys.Space;
+        public volatile static uint CIRCLE = (uint)Keys.V;
+        public volatile static uint TRIANGLE = (uint)Keys.1;
+        public volatile static uint LTRIGGER = (uint)Keys.;
+        public volatile static uint RTRIGGER = (uint)Keys.;
+        public volatile static uint SELECT = (uint)Keys.Tab;
+        public volatile static uint START = (uint)Keys.Escape;
 
         // left analog
-        public volatile static bool LEFT_MOUSE = false;
+        public volatile static bool LEFT_MOUSE = ;
         public volatile static uint LEFT_UP = (uint)Keys.W;
         public volatile static uint LEFT_DOWN = (uint)Keys.S;
         public volatile static uint LEFT_LEFT = (uint)Keys.A;
         public volatile static uint LEFT_RIGHT = (uint)Keys.D;
 
         // right analog
-        public volatile static bool RIGHT_MOUSE = false;
+        public volatile static bool RIGHT_MOUSE = ;
         public volatile static uint RIGHT_UP = (uint)Keys.T;
         public volatile static uint RIGHT_DOWN = (uint)Keys.G;
         public volatile static uint RIGHT_LEFT = (uint)Keys.F;
         public volatile static uint RIGHT_RIGHT = (uint)Keys.H;
 
         // mouse
-        public volatile static bool TRIGGERS_AS_MOUSE_CLICKS = false;
+        public volatile static bool TRIGGERS_AS_MOUSE_CLICKS = True;
         public volatile static bool MOUSE_AUTO_LEFT = false;
         public volatile static bool MOUSE_AUTO_RIGHT = false;
 

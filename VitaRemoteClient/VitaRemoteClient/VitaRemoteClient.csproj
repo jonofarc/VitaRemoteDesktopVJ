@@ -66,4 +66,10 @@
     <PsmMetadata Include="app.xml" />
     <Content Include="12.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\SampleLib\SampleLib.csproj">
+      <Project>{DA12989D-8B5F-4844-A97A-278F6397CE1D}</Project>
+      <Name>SampleLib</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

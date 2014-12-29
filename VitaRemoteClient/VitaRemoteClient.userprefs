@@ -1,24 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VitaRemoteClient\Packet\SendPacket.cs">
-    <Files>
-      <File FileName="VitaRemoteClient\UI\MainUI.cs" Line="38" Column="62" />
-      <File FileName="VitaRemoteClient\Packet\SendPacket.cs" Line="33" Column="18" />
-      <File FileName="VitaRemoteClient\AppMain.cs" Line="53" Column="28" />
-      <File FileName="VitaRemoteClient\Draw.cs" Line="39" Column="3" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="VitaRemoteClient" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Packet" expanded="True">
-              <Node name="SendPacket.cs" selected="True" />
-            </Node>
-            <Node name="shaders" expanded="True" />
-            <Node name="UI" expanded="True">
-              <Node name="Dialog" expanded="True" />
-            </Node>
+          <Node name="VitaRemoteClient" expanded="True" selected="True">
+            <Node name="Packet" expanded="True" />
           </Node>
         </State>
       </Pad>
