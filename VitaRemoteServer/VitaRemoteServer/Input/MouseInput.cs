@@ -27,32 +27,11 @@ namespace VitaRemoteServer.Input
         private const int MOUSEEVENTF_XDOWN = 0x0080;
         private const int MOUSEEVENTF_XUP = 0x0100;
 
-        private static int prevX = -1;
-        private static int prevY = -1;
-        private static int CurX = -1;
-        private static int CurY = -1;
-
-        private static Point mousePosition = new Point();
-
-        // handle a generic mouse button click
-        // true = down
-        // false = up
-        public static void MouseButton(MouseButtons key, Point pt, bool bHow)
-        {
-            if (bHow) // down
-            {
-                MousePress(key, pt);
-            }
-            else // up
-            {
-                MouseUp(key, pt);
-            }
-        }
         public static void MouseClick(MouseButtons key, Point pt)
         {
 
-            mouse_event(MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE, getAbsoluteX(pt.X), getAbsoluteY(pt.Y), 0, 0);
-            MouseMove(pt, false);
+            //mouse_event(MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE, getAbsoluteX(pt.X), getAbsoluteY(pt.Y), 0, 0);
+            MouseMove(pt);
             switch (key)
             {
                 case MouseButtons.Left:
@@ -98,24 +77,11 @@ namespace VitaRemoteServer.Input
                     break;
             }
         }
-        public static void MouseMove(Point pt, bool bRelative)
+        public static void MouseMove(Point pt)
         {
-            if (bRelative)
-            {
-                Point pos = new Point();
-                pos.X = Cursor.Position.X + pt.X;
-                pos.Y = Cursor.Position.Y + pt.Y;
-                Cursor.Position = pos;
-            }
-            else
-            {
-                Cursor.Position = pt;
-            }
-        }
-        public static void ScreenMove(Point pt)
-        {
-            screenCapture.X -= pt.X;
-            screenCapture.Y -= pt.Y;
+
+            mouse_event(MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE, getAbsoluteX(pt.X), getAbsoluteY(pt.Y), 0, 0);
+            //Cursor.Position = pt;
         }
         public static void MouseDoubleClick(MouseButtons key, Point pt)
         {
@@ -141,38 +107,10 @@ namespace VitaRemoteServer.Input
         {
             return (int)(((float)65535 / Settings.ScreenWidth) * x);
         }
+
         public static int getAbsoluteY(int y)
         {
             return (int)(((float)65535 / Settings.ScreenHeight) * y);
-        }
-
-        public static int getRelativeX(int x)
-        {
-            if (prevX == -1)
-            {
-                prevX = getAbsoluteX(x);
-                CurX = prevX;
-                return Cursor.Position.X;
-            }
-
-            prevX = CurX;
-            CurX = getAbsoluteX(x);
-            CurX += (prevX - CurX);
-            return CurX;
-        }
-        public static int getRelativeY(int y)
-        {
-            if (prevY == -1)
-            {
-                prevY = getAbsoluteY(y);
-                CurY = prevY;
-                return Cursor.Position.Y;
-            }
-
-            prevY = CurY;
-            CurY = getAbsoluteX(y);
-            CurY += (prevY - CurY);
-            return CurY;
         }
     }
 }

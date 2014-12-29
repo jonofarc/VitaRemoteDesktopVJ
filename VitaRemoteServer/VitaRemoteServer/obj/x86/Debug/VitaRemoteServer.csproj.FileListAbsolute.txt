@@ -1,0 +1,104 @@
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+c:\users\edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\PICSNMOTION\Documents\Visual Studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Edison\documents\visual studio 2010\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\PICSNMOTION\Documents\Projects\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Edison\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\programs\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\programs\0.99 SDK\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\programs\0.99 SDK\1.0.0\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\programs\0.99 SDK\0.2\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.exe
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\VitaRemoteServer.pdb
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.frmMain.resources
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\VitaRemoteServer.Properties.Resources.resources
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.read.1.tlog
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\programs\0.99 SDK\0.2\backup\PS VITA REMOTE DESKTOP\VitaRemoteServer\VitaRemoteServer\obj\x86\Debug\ResGen.write.1.tlog

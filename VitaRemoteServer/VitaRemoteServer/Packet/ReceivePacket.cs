@@ -10,87 +10,30 @@ namespace VitaRemoteServer
 {
     class ReceivePacket
     {
-        private static int MouseSensitivity = 10;
-        private static int motionSensitivity = 3;
-
-        private static int leftTriggerBuffer = 0;
-        private static int RightTriggerBuffer = 0;
-
-
-        public static int MouseSpeed
-        {
-            get { return MouseSensitivity; }
-            set { MouseSensitivity = value; }
-        }
-
-        // for tapping with 1 finger
+        private const int MouseSensitivity = 10;
+        private const int motionSensitivity = 3;
         public static void Tap(Point pt)
         {
-            if (gamePadInput.MOUSE_RELATIVE_ONE)
-            {
-                MouseInput.MouseClick((MouseButtons)gamePadInput.ONE_TAP, Cursor.Position);
-            }
-            else
-            {
-                MouseInput.MouseClick((MouseButtons)gamePadInput.ONE_TAP, pt);
-            }
+            MouseInput.MouseClick(MouseButtons.Left, pt);
         }
 
-        // for double tapping with 1 finger
         public static void DoubleTap(Point pt)
         {
-            if (gamePadInput.MOUSE_RELATIVE_ONE)
-            {
-                MouseInput.MouseDoubleClick((MouseButtons)gamePadInput.ONE_TAP, Cursor.Position);
-            }
-            else
-            {
-                MouseInput.MouseDoubleClick((MouseButtons)gamePadInput.ONE_TAP, pt);
-            }
+            MouseInput.MouseDoubleClick(MouseButtons.Left, pt);
         }
 
-        // dragging on screen with 1 finger
-        public static void Drag1(Point pt)
+        public static void Drag(Point pt)
         {
-            if (gamePadInput.ONE_TOUCH_MOVEMENT == 1)
-            {
-                MouseInput.MouseMove(pt, gamePadInput.MOUSE_RELATIVE_ONE);
-            }
-            if (gamePadInput.ONE_TOUCH_MOVEMENT == 2)
-            {
-                MouseInput.ScreenMove(pt);
-            }
+            System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
+            screenCapture.X -= pt.X;
+            screenCapture.Y -= pt.Y;
         }
 
-        // dragging on screen with 2 fingers
-        public static void Drag2(Point pt)
+        public static void MouseMove(Point pt)
         {
-            if (gamePadInput.TWO_TOUCH_MOVEMENT == 1)
-            {
-                MouseInput.MouseMove(pt, gamePadInput.MOUSE_RELATIVE_TWO);
-            }
-            if (gamePadInput.TWO_TOUCH_MOVEMENT == 2)
-            {
-                MouseInput.ScreenMove(pt);
-            }
+            MouseInput.MouseMove(pt);
         }
 
-        // mouse event for when you start dragging
-        public static void DragStart(Point pt)
-        {
-        }
-
-        // mouse event for when you stop dragging
-        public static void DragEnd(Point pt)
-        {
-        }
-
-        public static void LongPress(Point pt)
-        {
-            throw new NotImplementedException();
-        }
-
-        #region OLD
         public static void MouseRightClick(Point pt)
         {
             MouseInput.MouseClick(MouseButtons.Right, pt);
@@ -111,7 +54,6 @@ namespace VitaRemoteServer
             MouseInput.MouseUp(MouseButtons.Left, pt);
 
         }
-        #endregion
 
         public static void MotionData(byte[] motionData)
         {
@@ -170,48 +112,27 @@ namespace VitaRemoteServer
 
         public static void updateMouse()
         {
-            Point deltaMouse = new Point(0, 0);
-            // move the mouse if on the Left Stick
-            if (gamePadInput.LEFT_MOUSE)
+            if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
             {
-                if (gamePadInput.PSV_LEFT_ANALOGX == 1)
-                {
-                    deltaMouse.X = MouseSensitivity;
-                }
-                if (gamePadInput.PSV_LEFT_ANALOGX == 2)
-                {
-                    deltaMouse.X = -MouseSensitivity;
-                }
-                if (gamePadInput.PSV_LEFT_ANALOGY == 1)
-                {
-                    deltaMouse.Y = MouseSensitivity;
-                }
-                if (gamePadInput.PSV_LEFT_ANALOGY == 2)
-                {
-                    deltaMouse.Y = -MouseSensitivity;
-                }
+                Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
             }
-            // move the mouse if on the Right Stick
-            else if (gamePadInput.RIGHT_MOUSE)
+
+
+            if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
             {
-                if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
-                {
-                    deltaMouse.X = MouseSensitivity;
-                }
-                if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
-                {
-                    deltaMouse.X = -MouseSensitivity;
-                }
-                if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
-                {
-                    deltaMouse.Y = MouseSensitivity;
-                }
-                if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
-                {
-                    deltaMouse.Y = -MouseSensitivity;
-                }
+                Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
             }
-            MouseInput.MouseMove(deltaMouse, true);
+
+
+            if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
+            {
+                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + MouseSensitivity);
+            }
+
+            if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
+            {
+                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - MouseSensitivity);
+            }
         }
 
         public static void updateInput()
@@ -229,30 +150,13 @@ namespace VitaRemoteServer
                 keyBoardInput.KeyPress(gamePadInput.CROSS, (gamePadInput.PSV_BTN_CROSS == 1) ? true : false);
                 keyBoardInput.KeyPress(gamePadInput.CIRCLE, (gamePadInput.PSV_BTN_CIRCLE == 1) ? true : false);
                 keyBoardInput.KeyPress(gamePadInput.TRIANGLE, (gamePadInput.PSV_BTN_TRIANGLE == 1) ? true : false);
-
-                // handle of triggers are set for mouse clicks
-                if (gamePadInput.TRIGGERS_AS_MOUSE_CLICKS)
-                {
-                    if (leftTriggerBuffer != gamePadInput.PSV_BTN_LTRIGGER)
-                    {
-                        MouseInput.MouseButton(MouseButtons.Left, Cursor.Position, (gamePadInput.PSV_BTN_LTRIGGER == 1) ? true : false);
-                    }
-
-                    if (RightTriggerBuffer != gamePadInput.PSV_BTN_RTRIGGER)
-                    {
-                        MouseInput.MouseButton(MouseButtons.Right, Cursor.Position, (gamePadInput.PSV_BTN_RTRIGGER == 1) ? true : false);
-                    }
-
-                    // save teh bufferz
-                    leftTriggerBuffer = gamePadInput.PSV_BTN_LTRIGGER;
-                    RightTriggerBuffer = gamePadInput.PSV_BTN_RTRIGGER;
-                }
-                else
-                {
-                    keyBoardInput.KeyPress(gamePadInput.LTRIGGER, (gamePadInput.PSV_BTN_LTRIGGER == 1) ? true : false);
-                    keyBoardInput.KeyPress(gamePadInput.RTRIGGER, (gamePadInput.PSV_BTN_RTRIGGER == 1) ? true : false);
-                }
-
+                keyBoardInput.KeyPress(gamePadInput.LTRIGGER, (gamePadInput.PSV_BTN_LTRIGGER == 1) ? true : false);
+                keyBoardInput.KeyPress(gamePadInput.RTRIGGER, (gamePadInput.PSV_BTN_RTRIGGER == 1) ? true : false);
+                //if(gamePadInput.PSV_BTN_RTRIGGER == 1)
+                //{
+                  //  Point pt = Cursor.Position;
+                   // MouseInput.MouseClick(MouseButtons.Left, pt);
+                //}
 
                 //keyBoardInput.KeyPress(gamePadInput.SELECT, (gamePadInput.PSV_BTN_SELECT == 1) ? true : false);
                 if (gamePadInput.PSV_BTN_SELECT == 1)
@@ -260,102 +164,28 @@ namespace VitaRemoteServer
 
                 keyBoardInput.KeyPress(gamePadInput.START, (gamePadInput.PSV_BTN_START == 1) ? true : false);
 
-                MouseButtons button = MouseButtons.None;
-                bool autoButton = true;
+                if(gamePadInput.PSV_LEFT_ANALOGX == 1)
+                    keyBoardInput.KeyPress((byte)Keys.D, true);
 
-                if (gamePadInput.MOUSE_AUTO_LEFT)
+                if (gamePadInput.PSV_LEFT_ANALOGX == 2)
+                    keyBoardInput.KeyPress((byte)Keys.A, true);
+
+                if (gamePadInput.PSV_LEFT_ANALOGX == 0)
                 {
-                    button = MouseButtons.Left;
-                }
-                else if (gamePadInput.MOUSE_AUTO_RIGHT)
-                {
-                    button = MouseButtons.Right;
-                }
-                else
-                {
-                    autoButton = false;
+                    keyBoardInput.KeyPress((byte)Keys.D, false);
+                    keyBoardInput.KeyPress((byte)Keys.A, false);
                 }
 
-                // use keyboard keys on Left stick if it is not set for mouse
-                if (gamePadInput.LEFT_MOUSE == false)
+                if (gamePadInput.PSV_LEFT_ANALOGY == 1)
+                    keyBoardInput.KeyPress((byte)Keys.S, true);
+
+                if (gamePadInput.PSV_LEFT_ANALOGY == 2)
+                    keyBoardInput.KeyPress((byte)Keys.W, true);
+
+                if (gamePadInput.PSV_LEFT_ANALOGY == 0)
                 {
-                    if (gamePadInput.PSV_LEFT_ANALOGX == 1)
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_RIGHT, true);
-
-                    if (gamePadInput.PSV_LEFT_ANALOGX == 2)
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_LEFT, true);
-
-                    if (gamePadInput.PSV_LEFT_ANALOGX == 0)
-                    {
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_RIGHT, false);
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_LEFT, false);
-                    }
-
-                    if (gamePadInput.PSV_LEFT_ANALOGY == 1)
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_DOWN, true);
-
-                    if (gamePadInput.PSV_LEFT_ANALOGY == 2)
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_UP, true);
-
-                    if (gamePadInput.PSV_LEFT_ANALOGY == 0)
-                    {
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_DOWN, false);
-                        keyBoardInput.KeyPress((byte)gamePadInput.LEFT_UP, false);
-                    }
-                }
-                else if(autoButton)
-                {
-                    if (gamePadInput.PSV_LEFT_ANALOGX == 0 && gamePadInput.PSV_LEFT_ANALOGY == 0)
-                    {
-                        // mouse button up
-                        MouseInput.MouseUp(button, Cursor.Position);
-                    }
-                    else
-                    {
-                        // mouse button down
-                        MouseInput.MousePress(button, Cursor.Position);
-                    }
-                }
-
-                // use keyboard keys on Right stick if it is not set for mouse
-                if (gamePadInput.RIGHT_MOUSE == false)
-                {
-                    if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_RIGHT, true);
-
-                    if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_LEFT, true);
-
-                    if (gamePadInput.PSV_RIGHT_ANALOGX == 0)
-                    {
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_RIGHT, false);
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_LEFT, false);
-                    }
-
-                    if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_DOWN, true);
-
-                    if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_UP, true);
-
-                    if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
-                    {
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_DOWN, false);
-                        keyBoardInput.KeyPress((byte)gamePadInput.RIGHT_UP, false);
-                    }
-                }
-                else if (autoButton)
-                {
-                    if (gamePadInput.PSV_RIGHT_ANALOGX == 0 && gamePadInput.PSV_RIGHT_ANALOGY == 0)
-                    {
-                        // mouse button up
-                        MouseInput.MouseUp(button, Cursor.Position);
-                    }
-                    else
-                    {
-                        // mouse button down
-                        MouseInput.MousePress(button, Cursor.Position);
-                    }
+                    keyBoardInput.KeyPress((byte)Keys.W, false);
+                    keyBoardInput.KeyPress((byte)Keys.S, false);
                 }
 
             }

@@ -23,43 +23,6 @@ namespace VitaRemoteServer
             socket.send(msg);
         }
 
-        public static void sendRelativeDragOne(TCPConnection socket, bool bRelative)
-        {
-            PacketData msg = new PacketData();
-            byte[] fakeBool = new byte[1];
-
-            if (bRelative)
-            {
-                fakeBool[0] = 1;
-            }
-            else
-            {
-                fakeBool[0] = 0;
-            }
-
-            msg.ID = 501;
-            msg.bData = fakeBool;
-            socket.send(msg);
-        }
-        public static void sendRelativeDragTwo(TCPConnection socket, bool bRelative)
-        {
-            PacketData msg = new PacketData();
-            byte[] fakeBool = new byte[1];
-
-            if (bRelative)
-            {
-                fakeBool[0] = 1;
-            }
-            else
-            {
-                fakeBool[0] = 0;
-            }
-
-            msg.ID = 502;
-            msg.bData = fakeBool;
-            socket.send(msg);
-        }
-
         public static void sendImage2(TCPConnection socket, byte[] img)
         {
             PacketData msg = new PacketData();

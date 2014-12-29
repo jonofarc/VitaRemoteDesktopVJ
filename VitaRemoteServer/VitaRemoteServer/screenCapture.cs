@@ -110,18 +110,15 @@ namespace VitaRemoteServer
 
 #endregion
 
-        private volatile static int _x;
-        private volatile static int _y;
-        private volatile static int _area;
-        private volatile static int _resolution;
-        private volatile static int _resWidth;
-        private volatile static int _resHeight;
-        private volatile static int _areaWidth;
-        private volatile static int _areaHeight;
-        private volatile static int _quality;
-
-        private static frmMain _mainFrame;
-
+        private static int _x;
+        private static int _y;
+        private static int _area;
+        private static int _resolution;
+        private static int _resWidth;
+        private static int _resHeight;
+        private static int _areaWidth;
+        private static int _areaHeight;
+        private static int _quality;
         //private static Bitmap _prevBmp;
         //private static int qSwitch = 0;
         private static bool _showCursor = true;
@@ -130,12 +127,6 @@ namespace VitaRemoteServer
         {
             get { return _quality; }
             set { _quality = value; }
-        }
-
-        public static frmMain MainFrame
-        {
-            get { return _mainFrame; }
-            set { _mainFrame = value; }
         }
 
         public static bool ShowCursor
@@ -150,7 +141,6 @@ namespace VitaRemoteServer
             Area = 100;
             Resolution  = 100;
             Quality = 100;
-            _mainFrame = new frmMain();
         }
         public static int ResWidth
         {
@@ -166,13 +156,6 @@ namespace VitaRemoteServer
                 //_resHeight = (int)((Screen.PrimaryScreen.Bounds.Height * _resolution) / 100);
                 return _resHeight; 
             }
-        }
-
-        public static void SetResolution(int X, int Y, int index)
-        {
-            _resWidth = X; 
-            _resHeight = Y;
-            _resolution = index;
         }
 
         public static int Resolution
@@ -217,20 +200,10 @@ namespace VitaRemoteServer
             }
         }
 
-        public static void SetArea(int X, int Y, int index)
-        {
-            _areaWidth = X;
-            _areaHeight = Y;
-            _area = index;
-            _x = 0;
-            _y = 0;
-        }
-
         public static int Area
         {
             get { return _area; }
             set {
-
                 //if (value <= 100 && value >= 10)
                 //{
                     switch (value)
@@ -258,6 +231,7 @@ namespace VitaRemoteServer
                     //_areaWidth = (int)((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width * _area) / 100);
                     //_areaHeight = (int)((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height * _area) / 100);
 
+                    
                 //}
             }
         }

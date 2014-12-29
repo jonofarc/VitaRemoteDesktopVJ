@@ -8,7 +8,6 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
-using VitaRemoteServer.Input;
 
 namespace VitaRemoteServer
 {
@@ -98,11 +97,7 @@ namespace VitaRemoteServer
                 isConnected = true;
                 clientSocket.BeginReceive(recvBuffer, 0, recvBuffer.Length, 0, new AsyncCallback(SocketEventCallback.ReceiveCallback), this);
 
-                // send all the data back
-                SendPacket.sendRelativeDragOne(this, gamePadInput.MOUSE_RELATIVE_ONE);
-                SendPacket.sendRelativeDragTwo(this, gamePadInput.MOUSE_RELATIVE_TWO);
-
-                Console.WriteLine(string.Format("client Connected"));
+                System.Diagnostics.Debug.WriteLine(string.Format("client Connected"));
             }
         }
         public void Disconnect()
@@ -135,7 +130,7 @@ namespace VitaRemoteServer
                     //ns.Write(packet.toArray(), 0, packet.Size);
                     //clientSocket.BeginSend(packet.toArray(), 0, packet.Size, 0, new AsyncCallback(SocketEventCallback.SendCallback), this);
                     //ns.Flush();
-                    clientSocket.Send(packet.toArray(), SocketFlags.None );
+                    clientSocket.Send(packet.toArray(), SocketFlags.None);
                 }
             }
             catch
@@ -269,77 +264,43 @@ namespace VitaRemoteServer
         }
 
 
-        /*
-         * Inpacket IDs
-         * NOTE: 501 -> 507 send intX and intY
-         *     : 
-         * 501 - sendTap
-         * 502 - sendDoubleTap
-         * 503 - sendDrag1
-         * 504 - sendDrag2
-         * 505 - sendLongPress
-         * 506 - sendDragStart
-         * 507 - sendDragEnd
-         * 401 - sendReady
-         * 301 - sendGamePadInput
-         * 302 - sendSensorData
-         * */
         private void ProcessPacket(Packet packet)
         {
             
             switch(packet.ID)
             {
-                case 501:
-                    {
-                        Point ptTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        ReceivePacket.Tap(ptTap);
-                    } break;
-                case 502:
-                    {
-                      Point ptDTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                      ReceivePacket.DoubleTap(ptDTap);
-                    } break;
-                case 503:
-                    {
-                        Point ptDrag1;
-                        if (gamePadInput.MOUSE_RELATIVE_ONE)
-                        {
-                            ptDrag1 = Extensions.getVitaCoords(packet.Data);
-                        }
-                        else
-                        {
-                            ptDrag1 = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        }
-                        ReceivePacket.Drag1(ptDrag1);
-                    } break;
-                case 504:
-                    {
-                        Point ptDrag2;
-                        if (gamePadInput.MOUSE_RELATIVE_TWO)
-                        {
-                            ptDrag2 = Extensions.getVitaCoords(packet.Data);
-                        }
-                        else
-                        {
-                            ptDrag2 = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        }
-                        ReceivePacket.Drag2(ptDrag2);
-                    } break;
-                case 505:
-                    {
-                        Point ptLPTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        ReceivePacket.LongPress(ptLPTap);
-                    } break;
-                case 506:
-                    {
-                        Point ptDragStart = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        ReceivePacket.DragStart(ptDragStart);
-                    } break;
-                case 507:
-                    {
-                        Point ptDragEnd = Extensions.vitaCoordsToDesktopCoords(packet.Data);
-                        ReceivePacket.DragEnd(ptDragEnd);
-                    } break;
+                case 101:
+                    Point ptTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.Tap(ptTap);
+                    break;
+                case 102:
+                    Point ptDTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.DoubleTap(ptDTap);
+                    break;
+                case 103:
+                    Point ptDrag = Extensions.getVitaCoords(packet.Data);
+                    ReceivePacket.Drag(ptDrag);
+                    break;
+                case 104:
+                    Point ptMouseMove = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.MouseMove(ptMouseMove);
+                    break;
+                case 105:
+                    Point ptRightClick = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.MouseRightClick(ptRightClick);
+                    break;
+                case 106:
+                    Point ptRightDoubleClick = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.MouseRightDoubleClick(ptRightDoubleClick);
+                    break;
+                case 107:
+                    Point leftMouseDown = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.LeftMouseDown(leftMouseDown);
+                    break;
+                case 108:
+                    Point leftMouseUp = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.LeftMouseUp(leftMouseUp);
+                    break;
                 case 301:
                     ReceivePacket.ReceiveGamePadInput(packet.Data);
                     break;
