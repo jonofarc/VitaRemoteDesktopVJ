@@ -15,11 +15,13 @@ namespace VitaRemoteServer
         public static void Tap(Point pt)
         {
             MouseInput.MouseClick(MouseButtons.Left, pt);
+			
         }
 
         public static void DoubleTap(Point pt)
         {
-            MouseInput.MouseDoubleClick(MouseButtons.Left, pt);
+            MouseInput.MouseDoubleClick(MouseButtons.Left, pt);//jonathan removed dubleclick to be able to use it as a button
+			
         }
 
         public static void Drag(Point pt)
@@ -27,6 +29,7 @@ namespace VitaRemoteServer
             System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
             screenCapture.X -= pt.X;
             screenCapture.Y -= pt.Y;
+			
         }
 
         public static void MouseMove(Point pt)
@@ -46,7 +49,8 @@ namespace VitaRemoteServer
 
         public static void LeftMouseDown(Point pt)
         {
-            MouseInput.MousePress(MouseButtons.Left, pt);
+          //  MouseInput.MousePress(MouseButtons.Left, pt);
+			keyBoardInput.KeyPress((byte)Keys.M, true);//jonathan using mouse down as touch down screen
         }
 
         public static void LeftMouseUp(Point pt)
@@ -114,25 +118,31 @@ namespace VitaRemoteServer
         {
             if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
             {
-                Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
+             Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
+				
             }
 
 
             if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
             {
                 Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
+			
             }
+			 
 
 
             if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
             {
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + MouseSensitivity);
+				
             }
 
             if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
             {
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - MouseSensitivity);
+				
             }
+			
         }
 
         public static void updateInput()
@@ -187,6 +197,45 @@ namespace VitaRemoteServer
                     keyBoardInput.KeyPress((byte)Keys.W, false);
                     keyBoardInput.KeyPress((byte)Keys.S, false);
                 }
+				//jonathan hack for right analog to buttons
+				
+			if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
+            {
+              //  Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
+				keyBoardInput.KeyPress((byte)Keys.O, true);
+            }
+
+
+            if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
+            {
+              //  Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
+				keyBoardInput.KeyPress((byte)Keys.P, true);
+            }
+			 if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
+                {
+                    keyBoardInput.KeyPress((byte)Keys.O, false);
+                    keyBoardInput.KeyPress((byte)Keys.P, false);
+                }
+
+
+            if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
+            {
+              //  Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + MouseSensitivity);
+				keyBoardInput.KeyPress((byte)Keys.B, true);
+            }
+
+            if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
+            {
+              //  Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - MouseSensitivity);
+				keyBoardInput.KeyPress((byte)Keys.N, true);
+            }
+			 if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
+                {
+                    keyBoardInput.KeyPress((byte)Keys.N, false);
+                    keyBoardInput.KeyPress((byte)Keys.B, false);
+                }
+                
+				// end of jonathan hack for right analog to buttons
 
             }
             else

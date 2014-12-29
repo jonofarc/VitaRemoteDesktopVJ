@@ -64,6 +64,8 @@ namespace VitaRemoteClient
 				{
 					SendPacket.sendDrag1((int)pos.X,(int)pos.Y);
 					Console.WriteLine("Drag1 at " + pos.ToString());
+					SendPacket.sendLeftMouseDown((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan using drag as a mousedown
+					Console.WriteLine(" sendLeftMouseDown at" + e.LocalPosition.ToString());
 				}
 			}
 			
@@ -78,6 +80,7 @@ namespace VitaRemoteClient
 					}
 		 			SendPacket.sendDrag2((int)pos.X,(int)pos.Y);
 					Console.WriteLine("Drag2 at " + pos.ToString());
+					
 				}
 			}
 		}
@@ -86,6 +89,10 @@ namespace VitaRemoteClient
 		 {
 			SendPacket.sendLongPress((int)e.LocalPosition.X,(int)e.LocalPosition.Y);	
 			Console.WriteLine("LongPress at " + e.LocalPosition.ToString());
+			
+			
+		
+		
 		 }
 		
 		  void  dragStart (object sender, DragEventArgs e)

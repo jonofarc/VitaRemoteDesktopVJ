@@ -1,17 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VitaRemoteServer\frmMain.Designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VitaRemoteServer\Packet\ReceivePacket.cs">
     <Files>
       <File FileName="VitaRemoteServer\frmMain.resx" Line="16" Column="18" />
       <File FileName="VitaRemoteServer\frmMain.Designer.cs" Line="120" Column="43" />
+      <File FileName="VitaRemoteServer\Input\keyBoard.cs" Line="67" Column="33" />
+      <File FileName="VitaRemoteServer\Input\gamePadInput.cs" Line="59" Column="31" />
+      <File FileName="VitaRemoteServer\Packet\ReceivePacket.cs" Line="209" Column="30" />
+      <File FileName="VitaRemoteServer\frmMain.cs" Line="134" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="VitaRemoteServer" expanded="True">
-            <Node name="frmMain.cs" expanded="True">
-              <Node name="frmMain.Designer.cs" selected="True" />
+            <Node name="Input" expanded="True" />
+            <Node name="Packet" expanded="True">
+              <Node name="ReceivePacket.cs" selected="True" />
             </Node>
+            <Node name="frmMain.cs" expanded="True" />
           </Node>
         </State>
       </Pad>

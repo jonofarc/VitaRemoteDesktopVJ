@@ -75,7 +75,7 @@ namespace VitaRemoteClient
 			socket.send(msg);
 			
 		}
-		
+		*/
 		public static void sendLeftMouseDown(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -84,7 +84,7 @@ namespace VitaRemoteClient
 			socket.send(msg);
 			
 		}
-		
+		/*
 		public static void sendLeftMouseUp(int x, int y)
 		{
 			Packet msg = new Packet();
