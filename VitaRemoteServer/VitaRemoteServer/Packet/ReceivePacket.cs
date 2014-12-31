@@ -70,6 +70,8 @@ namespace VitaRemoteServer
             aX = BitConverter.ToInt16(motionData, 6);
             aY = BitConverter.ToInt16(motionData, 8);
             aZ = BitConverter.ToInt16(motionData, 10);
+			
+			
 
             Cursor.Position = new Point(Cursor.Position.X - (y * motionSensitivity), Cursor.Position.Y - (x * motionSensitivity));
 
@@ -119,13 +121,24 @@ namespace VitaRemoteServer
             if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
             {
              Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
-				
+				 keyBoardInput.KeyPress((byte)Keys.C, true);
             }
 
 
             if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
             {
                 Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
+                //jonathan
+				 keyBoardInput.KeyPress((byte)Keys.V, true);
+			
+            }
+			
+			if (gamePadInput.PSV_RIGHT_ANALOGX == 0)
+            {
+                
+                //jonathan
+				 keyBoardInput.KeyPress((byte)Keys.C, false);
+				 keyBoardInput.KeyPress((byte)Keys.V, false);
 			
             }
 			 
@@ -134,13 +147,18 @@ namespace VitaRemoteServer
             if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
             {
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + MouseSensitivity);
-				
+				keyBoardInput.KeyPress((byte)Keys.B, true);
             }
 
             if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
             {
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - MouseSensitivity);
-				
+				keyBoardInput.KeyPress((byte)Keys.N, true);
+            }
+			 if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
+            {
+              	keyBoardInput.KeyPress((byte)Keys.B, false);
+				keyBoardInput.KeyPress((byte)Keys.N, false);
             }
 			
         }
@@ -198,7 +216,7 @@ namespace VitaRemoteServer
                     keyBoardInput.KeyPress((byte)Keys.S, false);
                 }
 				//jonathan hack for right analog to buttons
-				
+				/*
 			if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
             {
               //  Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
@@ -234,7 +252,7 @@ namespace VitaRemoteServer
                     keyBoardInput.KeyPress((byte)Keys.N, false);
                     keyBoardInput.KeyPress((byte)Keys.B, false);
                 }
-                
+                */
 				// end of jonathan hack for right analog to buttons
 
             }

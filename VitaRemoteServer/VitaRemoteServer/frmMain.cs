@@ -102,7 +102,7 @@ namespace VitaRemoteServer
 			
 			
             screenCapture.Resolution = 50; //jonathan posible place to change capturesize
-            screenCapture.Quality = 50;
+            screenCapture.Quality = 50;//original value 50
             screenCapture.Area = 20;
             screenCapture.X = 0;
             screenCapture.Y = 0;
@@ -186,6 +186,8 @@ namespace VitaRemoteServer
                 lblScale.Text = "Capture Area: 720 x 576";
             if (tbArea.Value == 5)
                 lblScale.Text = "Capture Area: 800 x 600";
+			if (tbArea.Value == 6)
+                lblScale.Text = "Capture Area: 1200 x 800";
         }
 
         private void tbQuality_Scroll(object sender, EventArgs e)

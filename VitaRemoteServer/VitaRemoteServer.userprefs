@@ -1,21 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VitaRemoteServer\frmMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VitaRemoteServer\Packet\ReceivePacket.cs">
     <Files>
-      <File FileName="VitaRemoteServer\frmMain.resx" Line="16" Column="18" />
-      <File FileName="VitaRemoteServer\frmMain.Designer.cs" Line="8" Column="39" />
-      <File FileName="VitaRemoteServer\Input\keyBoard.cs" Line="67" Column="33" />
-      <File FileName="VitaRemoteServer\Input\gamePadInput.cs" Line="59" Column="31" />
-      <File FileName="VitaRemoteServer\Packet\ReceivePacket.cs" Line="87" Column="4" />
-      <File FileName="VitaRemoteServer\frmMain.cs" Line="97" Column="15" />
-      <File FileName="VitaRemoteServer\TCPConnection.cs" Line="85" Column="4" />
-      <File FileName="VitaRemoteServer\Properties\AssemblyInfo.cs" Line="9" Column="25" />
-      <File FileName="VitaRemoteServer\Packet\SendPacket.cs" Line="20" Column="38" />
-      <File FileName="VitaRemoteServer\Properties\Resources.Designer.cs" Line="23" Column="33" />
+      <File FileName="VitaRemoteServer\frmMain.Designer.cs" Line="72" Column="3" />
+      <File FileName="VitaRemoteServer\frmMain.cs" Line="227" Column="13" />
+      <File FileName="VitaRemoteServer\screenCapture.cs" Line="203" Column="27" />
       <File FileName="VitaRemoteServer\Packet\Packet.cs" Line="1" Column="1" />
-      <File FileName="VitaRemoteServer\Settings.cs" Line="1" Column="1" />
-      <File FileName="VitaRemoteServer\screenCapture.cs" Line="1" Column="1" />
-      <File FileName="VitaRemoteServer\Properties\Settings.Designer.cs" Line="16" Column="142" />
+      <File FileName="VitaRemoteServer\Packet\ReceivePacket.cs" Line="130" Column="11" />
+      <File FileName="VitaRemoteServer\Packet\SendPacket.cs" Line="20" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,9 +17,11 @@
             <Node name="Packet" expanded="True" />
             <Node name="Properties" expanded="True">
               <Node name="Resources.resx" expanded="True" />
-              <Node name="Settings.settings" expanded="True" />
+              <Node name="Settings.settings" expanded="True">
+                <Node name="Settings.Designer.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="frmMain.cs" expanded="True" selected="True" />
+            <Node name="frmMain.cs" expanded="True" />
           </Node>
         </State>
       </Pad>

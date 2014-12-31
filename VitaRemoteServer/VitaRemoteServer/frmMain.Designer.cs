@@ -64,7 +64,7 @@
             // tbArea
             // 
             this.tbArea.Location = new System.Drawing.Point(12, 73);
-            this.tbArea.Maximum = 5;
+            this.tbArea.Maximum = 6;
             this.tbArea.Minimum = 1;
             this.tbArea.Name = "tbArea";
             this.tbArea.Size = new System.Drawing.Size(245, 45);

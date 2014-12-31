@@ -223,6 +223,9 @@ namespace VitaRemoteServer
                         case 5:
                             _areaWidth = 800; _areaHeight = 600;
                             break;
+						case 6:
+                            _areaWidth = 1200; _areaHeight = 800; //jonathan added new resolution
+                            break;
                     }
 
                     _area = value;
