@@ -129,15 +129,16 @@ namespace VitaRemoteClient
 		public static void sendDrag2(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 504; 
+			msg.ID = 109; 
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
+			Console.WriteLine("drag 2");
 		}
 		
 		public static void sendLongPress(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 505; 
+			msg.ID = 110; 
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
@@ -145,14 +146,14 @@ namespace VitaRemoteClient
 		public static void sendDragStart(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 506; 
+			msg.ID = 111; 
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
 		public static void sendDragEnd(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 507; 
+			msg.ID = 112; 
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}

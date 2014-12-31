@@ -6,9 +6,8 @@
       <File FileName="VitaRemoteServer\frmMain.cs" Line="227" Column="13" />
       <File FileName="VitaRemoteServer\screenCapture.cs" Line="184" Column="57" />
       <File FileName="VitaRemoteServer\Packet\Packet.cs" Line="1" Column="1" />
-      <File FileName="VitaRemoteServer\Packet\ReceivePacket.cs" Line="32" Column="28" />
-      <File FileName="VitaRemoteServer\Packet\SendPacket.cs" Line="20" Column="38" />
-      <File FileName="VitaRemoteServer\TCPConnection.cs" Line="324" Column="2" />
+      <File FileName="VitaRemoteServer\Packet\ReceivePacket.cs" Line="51" Column="10" />
+      <File FileName="VitaRemoteServer\TCPConnection.cs" Line="259" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

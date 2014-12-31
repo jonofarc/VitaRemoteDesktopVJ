@@ -274,7 +274,7 @@ namespace VitaRemoteServer
             
             switch(packet.ID)
             {
-                case 101:
+                		case 101:
                     Point ptTap = Extensions.vitaCoordsToDesktopCoords(packet.Data);
                     ReceivePacket.Tap(ptTap);
                     break;
@@ -306,6 +306,25 @@ namespace VitaRemoteServer
                     Point leftMouseUp = Extensions.vitaCoordsToDesktopCoords(packet.Data);
                     ReceivePacket.LeftMouseUp(leftMouseUp);
                     break;
+//jonathan area dded for functions not included in client
+				case 109:
+				
+                    Point ptDrag2 = Extensions.getVitaCoords(packet.Data);
+                    ReceivePacket.Drag2(ptDrag2);
+                    break;
+		 		case 110:
+                    Point sendLongPress = Extensions.vitaCoordsToDesktopCoords(packet.Data);
+                    ReceivePacket.LongPress(sendLongPress);
+                    break;
+		 		case 111:
+                    Point sendDragStart = Extensions.getVitaCoords(packet.Data);
+                    ReceivePacket.DragStart(sendDragStart);
+                    break;
+				case 112:		
+                   Point sendDragEnd = Extensions.getVitaCoords(packet.Data);
+                    ReceivePacket.DragEnd(sendDragEnd);
+                    break;
+// end jonathan
                 case 301:
                     ReceivePacket.ReceiveGamePadInput(packet.Data);
                     break;

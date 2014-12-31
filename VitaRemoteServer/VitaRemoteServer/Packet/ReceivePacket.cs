@@ -33,13 +33,45 @@ namespace VitaRemoteServer
         {
 			
 			
-			screenCapture._x -= (pt.X-100);
-			screenCapture._y -= (pt.Y-100);
+			screenCapture.X = 0;
+			screenCapture.Y = 0;
 			Console.WriteLine("ps drag");
 			
            // System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
            // screenCapture.X -= pt.X;
            // screenCapture.Y -= pt.Y;
+			
+        }
+	 public static void LongPress(Point pt)
+        {
+
+			Console.WriteLine("ps longpress");
+
+			
+        }
+        public static void DragStart(Point pt)
+        {
+	
+			Console.WriteLine("ps dragstart");
+			
+
+        }
+        public static void DragEnd(Point pt)
+        {
+			
+
+			Console.WriteLine("ps dragend");
+			
+	
+        }
+		  public static void Drag2(Point pt)
+        {
+			
+			
+			
+			Console.WriteLine("ps drag2");
+			
+       
 			
         }
 
