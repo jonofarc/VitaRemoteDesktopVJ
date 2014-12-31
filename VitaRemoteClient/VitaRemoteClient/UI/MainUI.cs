@@ -36,7 +36,7 @@ namespace VitaRemoteClient
 		{
 		 	SendPacket.sendTap((int)e.LocalPosition.X, (int)e.LocalPosition.Y);	
 			Console.WriteLine("Tap at " + e.LocalPosition.ToString());
-			SendPacket.sendLeftMouseClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
+			//SendPacket.sendLeftMouseClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
 		
 			
 			
@@ -46,7 +46,7 @@ namespace VitaRemoteClient
 		{
 			SendPacket.sendDoubleTap((int)e.LocalPosition.X, (int)e.LocalPosition.Y);	
 			Console.WriteLine("DoubleTap at " + e.LocalPosition.ToString());
-			SendPacket.sendLeftMouseDoubleClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
+			//SendPacket.sendLeftMouseDoubleClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
 		}
 		
 		void  BackDrag (object sender, DragEventArgs e){//jonathan trying to place back drag events
@@ -68,8 +68,8 @@ namespace VitaRemoteClient
 				{
 					SendPacket.sendDrag1((int)pos.X,(int)pos.Y);
 					Console.WriteLine("Drag1 at " + pos.ToString());
-					SendPacket.sendLeftMouseDown((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan using drag as a mousedown
-					Console.WriteLine(" sendLeftMouseDown at" + e.LocalPosition.ToString());
+					//SendPacket.sendLeftMouseDown((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan using drag as a mousedown
+					//Console.WriteLine(" sendLeftMouseDown at" + e.LocalPosition.ToString());
 				}
 			}
 			

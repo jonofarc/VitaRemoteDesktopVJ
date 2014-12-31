@@ -25,7 +25,7 @@ namespace VitaRemoteClient
 		private static TCPConnection socket;
 		
 		#region OLD_STUFF
-		
+		/*
 		public static void sendLeftMouseClick(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -41,7 +41,7 @@ namespace VitaRemoteClient
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
-		/*
+		
 		public static void sendDrag(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -49,7 +49,7 @@ namespace VitaRemoteClient
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
-		
+		*/
 		public static void sendMouseMove(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -75,7 +75,7 @@ namespace VitaRemoteClient
 			socket.send(msg);
 			
 		}
-		*/
+		
 		public static void sendLeftMouseDown(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -84,7 +84,7 @@ namespace VitaRemoteClient
 			socket.send(msg);
 			
 		}
-		/*
+		
 		public static void sendLeftMouseUp(int x, int y)
 		{
 			Packet msg = new Packet();
@@ -93,7 +93,7 @@ namespace VitaRemoteClient
 			socket.send(msg);
 			
 		}
-		*/
+		
 		#endregion
 		
 		public static void Init(TCPConnection tcpSocket)
@@ -106,14 +106,14 @@ namespace VitaRemoteClient
 		public static void sendTap(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 501;
+			msg.ID = 101;
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
 		public static void sendDoubleTap(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 502;
+			msg.ID = 102;
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
 		}
@@ -121,9 +121,10 @@ namespace VitaRemoteClient
 		public static void sendDrag1(int x, int y)
 		{
 			Packet msg = new Packet();
-			msg.ID = 503;
+			msg.ID = 103;
 			msg.Data = coordsToByte(x,y);
 			socket.send(msg);
+			
 		}
 		public static void sendDrag2(int x, int y)
 		{

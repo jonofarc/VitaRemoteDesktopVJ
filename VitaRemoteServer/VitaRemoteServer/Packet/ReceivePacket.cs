@@ -31,9 +31,15 @@ namespace VitaRemoteServer
 
         public static void Drag(Point pt)
         {
-            System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
-            screenCapture.X -= pt.X;
-            screenCapture.Y -= pt.Y;
+			
+			
+			screenCapture._x -= (pt.X-100);
+			screenCapture._y -= (pt.Y-100);
+			Console.WriteLine("ps drag");
+			
+           // System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
+           // screenCapture.X -= pt.X;
+           // screenCapture.Y -= pt.Y;
 			
         }
 
@@ -55,6 +61,9 @@ namespace VitaRemoteServer
         public static void LeftMouseDown(Point pt)
         {
           //  MouseInput.MousePress(MouseButtons.Left, pt);
+			
+			
+			
 			//keyBoardInput.KeyPress((byte)Keys.M, true);//jonathan using mouse down as touch down screen
 			//Console.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString()+ " " +pt.ToString() );
           
