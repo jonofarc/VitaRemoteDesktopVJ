@@ -8,10 +8,15 @@ using VitaRemoteServer.Input;
 
 namespace VitaRemoteServer
 {
+	
     class ReceivePacket
     {
         private const int MouseSensitivity = 10;
         private const int motionSensitivity = 3;
+		
+		public static int m_xbefore=0;
+		public static int m_ybefore=0;
+		
         public static void Tap(Point pt)
         {
             MouseInput.MouseClick(MouseButtons.Left, pt);
@@ -50,7 +55,51 @@ namespace VitaRemoteServer
         public static void LeftMouseDown(Point pt)
         {
           //  MouseInput.MousePress(MouseButtons.Left, pt);
-			keyBoardInput.KeyPress((byte)Keys.M, true);//jonathan using mouse down as touch down screen
+			//keyBoardInput.KeyPress((byte)Keys.M, true);//jonathan using mouse down as touch down screen
+			//Console.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString()+ " " +pt.ToString() );
+          
+			//Console.WriteLine("m_xbefore: "+m_xbefore);
+			
+			screenCapture._x -= (pt.X-100);
+			screenCapture._y -= (pt.Y-100);
+			
+		
+			
+            
+			/*
+			// 
+			//Console.WriteLine("screenCapture._x "+screenCapture._x+" Screen.PrimaryScreen.WorkingArea.X "+Screen.PrimaryScreen.WorkingArea.Width);
+			//
+			//if((screenCapture._x*(-1))>Screen.PrimaryScreen.WorkingArea.Width){
+			//	screenCapture._x = 0;
+			//}
+			//if((screenCapture._y*(-1))>Screen.PrimaryScreen.WorkingArea.Height){
+			//	screenCapture._y = 0;
+			//}
+			if(m_xbefore==0){
+				m_xbefore=screenCapture._x;
+			}
+			if(m_ybefore==0){
+				m_ybefore=screenCapture._y;
+			}
+			Console.WriteLine("screenCapture._x: "+screenCapture._x+" m_xbefore "+m_xbefore);
+			if(screenCapture._x>1||screenCapture._x<m_xbefore-51||screenCapture._x>m_ybefore+51){
+				
+				screenCapture._x=m_xbefore;
+			} 
+			else{
+				m_xbefore=screenCapture._x;
+			}
+			if(screenCapture._y>1||screenCapture._y<m_ybefore-51||screenCapture._y>m_ybefore+51){
+				
+				screenCapture._y=m_ybefore;
+			} 
+			else{
+				m_ybefore=screenCapture._y;
+			}
+			Console.WriteLine("screenCapture._x: "+screenCapture._x+" m_xbefore "+m_xbefore);
+			
+			*/
         }
 
         public static void LeftMouseUp(Point pt)

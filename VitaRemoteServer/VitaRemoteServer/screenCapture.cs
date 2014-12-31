@@ -110,8 +110,8 @@ namespace VitaRemoteServer
 
 #endregion
 
-        private static int _x;
-        private static int _y;
+        public static int _x;
+        public static int _y;
         private static int _area;
         private static int _resolution;
         private static int _resWidth;
@@ -181,11 +181,11 @@ namespace VitaRemoteServer
         public static int X
         {
             get { return _x; }
-            set{
-                if ((value + _areaWidth) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width && value >= 0)
-                {
+            set{ //jonathan comented this lines to test drag screen peformance not working well must find better way
+               // if ((value + _areaWidth) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width && value >= 0)
+               // {
                     _x = value;
-                }
+               // }
             }
         }
 
@@ -193,10 +193,10 @@ namespace VitaRemoteServer
         {
             get { return _y; }
             set {
-                if ((value + _areaHeight) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height && value >= 0)
-                {
+              //  if ((value + _areaHeight) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height && value >= 0)
+               // {
                     _y = value; 
-                }
+              //  }
             }
         }
 
@@ -215,7 +215,7 @@ namespace VitaRemoteServer
                             _areaWidth = 480; _areaHeight = 270;
                             break;
                         case 3:
-                            _areaWidth = 640; _areaHeight = 480;
+                            _areaWidth = 688; _areaHeight = 501;
                             break;
                         case 4:
                             _areaWidth = 720; _areaHeight = 576;
@@ -277,10 +277,12 @@ namespace VitaRemoteServer
                 ReleaseDC(hwnd, hDC);
 
                 Bitmap bmp = System.Drawing.Image.FromHbitmap(hBitmap);
+				
 
 
                 DeleteObject(hBitmap);
                 return bmp.Compress(_quality);
+				//return bmp.Compress(100);
             }
 
             return null;
@@ -369,7 +371,7 @@ namespace VitaRemoteServer
                 encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, Convert.ToInt64(quality));
 
                 image.Save(memoryStream, imageCodecInfo, encoderParameters);
-                //image.Save(memoryStream, ImageFormat.Jpeg);
+                image.Save(memoryStream, ImageFormat.Jpeg);
                 return memoryStream;
             }
         }

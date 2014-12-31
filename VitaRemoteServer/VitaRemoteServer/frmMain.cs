@@ -181,7 +181,7 @@ namespace VitaRemoteServer
             if (tbArea.Value == 2)
                 lblScale.Text = "Capture Area: 480 x 270";
             if (tbArea.Value == 3)
-                lblScale.Text = "Capture Area: 640 x 480";
+                lblScale.Text = "Capture Area: 688 x 501"; //originla value 640*480
             if (tbArea.Value == 4)
                 lblScale.Text = "Capture Area: 720 x 576";
             if (tbArea.Value == 5)
