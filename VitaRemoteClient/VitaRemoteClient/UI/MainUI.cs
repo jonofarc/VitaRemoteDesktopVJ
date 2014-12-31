@@ -49,6 +49,10 @@ namespace VitaRemoteClient
 			SendPacket.sendLeftMouseDoubleClick((int)e.LocalPosition.X,(int)e.LocalPosition.Y);//jonathan send touch cordinates so we can click those cordinates
 		}
 		
+		void  BackDrag (object sender, DragEventArgs e){//jonathan trying to place back drag events
+			Console.WriteLine("backdrag at " + e.LocalPosition.ToString());
+		}
+		
 		void  Drag (object sender, DragEventArgs e)
 		{
 			Vector2 pos = e.LocalPosition;

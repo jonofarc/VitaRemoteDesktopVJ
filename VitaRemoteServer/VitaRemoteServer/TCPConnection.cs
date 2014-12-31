@@ -81,11 +81,16 @@ namespace VitaRemoteServer
         public bool listen()
         {
             socketListener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			
+			
             socketListener.Bind(new IPEndPoint(IPAddress.Any, _localPort));
+			
+			 
             System.Diagnostics.Debug.WriteLine(string.Format("Server started on port {0}.", _localPort));
+			
             socketListener.Listen(1);
             socketListener.BeginAccept(new AsyncCallback(SocketEventCallback.AcceptCallback),this);
-            
+          
             return true;
         }
 

@@ -9,11 +9,13 @@ namespace VitaRemoteServer
     {
         public static void sendMessage(TCPConnection socket, string Msg)
         {
+			
             PacketData msg = new PacketData();
             msg.sData = Msg;
             msg.ID = 101;
-
+			
             socket.send(msg);
+			
         }
         public static void sendImage(TCPConnection socket, byte[] img)
         {

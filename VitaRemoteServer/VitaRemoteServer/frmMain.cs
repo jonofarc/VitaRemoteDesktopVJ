@@ -12,6 +12,8 @@ using VitaRemoteServer.Input;
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.Net;
 
 namespace VitaRemoteServer
 {
@@ -29,6 +31,8 @@ namespace VitaRemoteServer
         private static byte[] boundary;
         private static Stopwatch stopWatch = new Stopwatch();
         private Thread mouse;
+		
+		public static string serverPort;
 
         private void updateMouse()
         {
@@ -51,8 +55,9 @@ namespace VitaRemoteServer
             trayIcon.Icon = new Icon(SystemIcons.Application, 40, 40);
             trayIcon.ContextMenu = trayMenu;
             trayIcon.Visible = true;
+			
 
-            mouse = new Thread(updateMouse);
+            mouse = new Thread(updateMouse); //jonathan desactivar mouse posible correcion right stick
             mouse.Start();
             
         }
@@ -68,12 +73,35 @@ namespace VitaRemoteServer
 
             screenCapture.Area = 2;
             server = new TCPConnection();
+			
+			
+			
 
             server.localPort = 8080;
             server.listen();
+			
             screenCapture.init();
+			
+			//jonathan get ip direction
+			string sHostName = Dns.GetHostName();
+            IPHostEntry ipEntry = Dns.GetHostEntry(sHostName);
+            IPAddress[] IpAddr = ipEntry.AddressList;
 
-            screenCapture.Resolution = 50;
+            int smallestIndex = 0;
+            for (int ipIndex = 1; ipIndex < IpAddr.Length; ++ipIndex)
+            {
+                if (IpAddr[smallestIndex].ToString().Length > IpAddr[ipIndex].ToString().Length)
+                {
+                    smallestIndex = ipIndex;
+                }
+            }
+
+            serverPort = IpAddr[smallestIndex] + ":" + server.localPort;
+			//Console.WriteLine(serverPort);
+			label4.Text = "IP Adress : " + IpAddr[smallestIndex] + "    Port: "+server.localPort; //jonathan place for image quiality
+			
+			
+            screenCapture.Resolution = 50; //jonathan posible place to change capturesize
             screenCapture.Quality = 50;
             screenCapture.Area = 20;
             screenCapture.X = 0;
@@ -94,6 +122,7 @@ namespace VitaRemoteServer
         {
             if (server.isConnected && server.Ready)
             {
+				
                 MemoryStream ms1 = new MemoryStream();
                 MemoryStream ms2 = new MemoryStream();
                 MemoryStream ms3 = new MemoryStream();
@@ -162,7 +191,7 @@ namespace VitaRemoteServer
         private void tbQuality_Scroll(object sender, EventArgs e)
         {
             screenCapture.Quality = tbQuality.Value;
-            label1.Text = "Image Quality: " + tbQuality.Value + "%";
+            label1.Text = "Image Quality: " + tbQuality.Value + "%"; //jonathan place for image quiality
         }
 
         public MemoryStream CreateToMemoryStream(MemoryStream memStreamIn, string zipEntryName)
