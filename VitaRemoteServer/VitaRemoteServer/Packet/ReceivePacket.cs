@@ -187,8 +187,21 @@ namespace VitaRemoteServer
                 //}
 
                 //keyBoardInput.KeyPress(gamePadInput.SELECT, (gamePadInput.PSV_BTN_SELECT == 1) ? true : false);
-                if (gamePadInput.PSV_BTN_SELECT == 1)
-                    screenCapture.ShowCursor = !screenCapture.ShowCursor;
+                if (gamePadInput.PSV_BTN_SELECT == 1){
+					
+					 // screenCapture.ShowCursor = !screenCapture.ShowCursor;  //show hide cursor
+				
+					screenCapture.ShowCursor=false;
+					keyBoardInput.KeyPress((byte)Keys.Q, true);
+					
+				}
+				if (gamePadInput.PSV_BTN_SELECT == 0){
+					
+					
+					keyBoardInput.KeyPress((byte)Keys.Q, false);
+					
+				}
+                  
 
                 keyBoardInput.KeyPress(gamePadInput.START, (gamePadInput.PSV_BTN_START == 1) ? true : false);
 
