@@ -67,7 +67,7 @@ namespace VitaRemoteServer.Input
         public static uint CROSS = (uint)Keys.K;
         public static uint CIRCLE = (uint)Keys.L;
         public static uint TRIANGLE = (uint)Keys.I;
-        public static uint LTRIGGER = (uint)Keys.U;
+        public static uint LTRIGGER = (uint)Keys.P;
         public static uint RTRIGGER = (uint)Keys.O;
         public static uint SELECT = (uint)Keys.Q;
         public static uint START = (uint)Keys.Enter;

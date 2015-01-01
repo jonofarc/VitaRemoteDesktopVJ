@@ -161,21 +161,22 @@ namespace VitaRemoteServer
             aY = BitConverter.ToInt16(motionData, 8);
             aZ = BitConverter.ToInt16(motionData, 10);
 			
+			//jonathan disabled this line so you can use Left trigger asa normal key intead of using it to controll mouse
+
+          //  Cursor.Position = new Point(Cursor.Position.X - (y * motionSensitivity), Cursor.Position.Y - (x * motionSensitivity));
 			
-
-            Cursor.Position = new Point(Cursor.Position.X - (y * motionSensitivity), Cursor.Position.Y - (x * motionSensitivity));
-
+			//jonathan disabled this lines in order to be able to use leftstick while you hold down left Trigger
             if (aX > 2)
-                keyBoardInput.KeyPress((byte)Keys.D, true);
+            //    keyBoardInput.KeyPress((byte)Keys.D, true);
 
             if(aX < -2)
-                keyBoardInput.KeyPress((byte)Keys.A, true);
+             //   keyBoardInput.KeyPress((byte)Keys.A, true);
 
             if (aX > -2 && aX < 2)
             {
-                keyBoardInput.KeyPress((byte)Keys.A, false);
-                keyBoardInput.KeyPress((byte)Keys.D, false);
-            }
+             //   keyBoardInput.KeyPress((byte)Keys.A, false);
+              //  keyBoardInput.KeyPress((byte)Keys.D, false);
+            }//
 
             System.Diagnostics.Debug.WriteLine(aX + " " + aY + " " + aZ);
         }

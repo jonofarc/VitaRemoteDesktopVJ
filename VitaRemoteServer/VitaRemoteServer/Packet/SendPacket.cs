@@ -21,6 +21,7 @@ namespace VitaRemoteServer
         {
             PacketData msg = new PacketData();
             msg.ID = 102;
+		//	Console.WriteLine(img.Length);
             msg.bData = img;
             socket.send(msg);
         }

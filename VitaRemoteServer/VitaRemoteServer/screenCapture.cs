@@ -215,7 +215,7 @@ namespace VitaRemoteServer
                             _areaWidth = 480; _areaHeight = 270;
                             break;
                         case 3:
-                            _areaWidth = 688; _areaHeight = 501;
+                            _areaWidth = 640; _areaHeight = 480;
                             break;
                         case 4:
                             _areaWidth = 720; _areaHeight = 576;
@@ -282,7 +282,7 @@ namespace VitaRemoteServer
 
                 DeleteObject(hBitmap);
                 return bmp.Compress(_quality);
-				//return bmp.Compress(100);
+				
             }
 
             return null;
@@ -293,7 +293,8 @@ namespace VitaRemoteServer
         {
             Size size = new Size(_areaWidth , _areaHeight);
 
-            Bitmap srcImage = new Bitmap(size.Width, size.Height);
+            Bitmap srcImage = new Bitmap(size.Width, size.Height,System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
+			
             Graphics srcGraphics = Graphics.FromImage(srcImage);
 
             srcGraphics.CopyFromScreen(_x, _y, 0, 0, size);
@@ -321,9 +322,13 @@ namespace VitaRemoteServer
 
             srcGraphics = Graphics.FromImage(scaledScr2);
             srcGraphics.DrawImage(srcImage, dst, src2, GraphicsUnit.Pixel);
-
+			
+			
                 ms1 = scaledScr1.Compress(_quality);
                 ms2 = scaledScr2.Compress(_quality);
+			//
+			//Console.WriteLine("ms1.lengh = "+ms1.Length);
+			//Console.WriteLine("ms2.lengh = "+ms2.Length);
                 
 
             return 0;
@@ -336,8 +341,8 @@ namespace VitaRemoteServer
             if ((b1 == null) != (b2 == null)) return false;
             if (b1.Size != b2.Size) return false;
 
-            var bd1 = b1.LockBits(new Rectangle(new Point(0, 0), b1.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            var bd2 = b2.LockBits(new Rectangle(new Point(0, 0), b2.Size), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            var bd1 = b1.LockBits(new Rectangle(new Point(0, 0), b1.Size), ImageLockMode.ReadOnly, PixelFormat.Format16bppRgb555);//jonathan changed image frtom 32bits to 16 bits for an improved performance of around 10% and no noticable image downgrade
+            var bd2 = b2.LockBits(new Rectangle(new Point(0, 0), b2.Size), ImageLockMode.ReadOnly, PixelFormat.Format16bppRgb555);
 
             try
             {
@@ -356,11 +361,38 @@ namespace VitaRemoteServer
             }
         }
 
-        public static MemoryStream Compress(this Image image, Int32 quality)
+        public static MemoryStream Compress(this Image image, Int32 quality) //jonathan compress image
         {
             if (image == null)
                 return null;
+			
+		
+		
+				// jonathan resise image it works but image is already at 200 pixel per size
+		/*	
+			Console.WriteLine("image width = "+image.Width.ToString());
+			Console.WriteLine("image height = "+image.Height.ToString());
+			Int32 scaledWidth = Convert.ToInt32(image.Width * 0.4f);
+  			Int32 scaledHeight = Convert.ToInt32(image.Height * 0.4f);
+			
+			Size size=new Size(scaledWidth , scaledHeight);
+  			var resizedImage = new Bitmap(size.Width, size.Height, image.PixelFormat);
+ 			 resizedImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
+ 			 using (var g = Graphics.FromImage(resizedImage))
+ 			 {
+ 				   var location = new Point(0, 0);
+ 				   g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+  				  g.DrawImage(image, new Rectangle(location, size), new Rectangle(location, image.Size), GraphicsUnit.Pixel);
+			  }
+				
+				image=resizedImage;
+			//
+			
+		*/	
+			
+			
+			
             quality = Math.Max(0, Math.Min(100, quality));
 
             using (var encoderParameters = new EncoderParameters(1))
@@ -369,9 +401,12 @@ namespace VitaRemoteServer
                 var memoryStream = new MemoryStream();
 
                 encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, Convert.ToInt64(quality));
-
+				
+				
                 image.Save(memoryStream, imageCodecInfo, encoderParameters);
                 image.Save(memoryStream, ImageFormat.Jpeg);
+				
+				
                 return memoryStream;
             }
         }

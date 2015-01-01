@@ -42,7 +42,7 @@ namespace VitaRemoteServer
     class TCPConnection : ISocketListener 
     {
         
-        private const int bufferSize = 1024;
+        private const int bufferSize = 1024; //jonathan
         private byte[] recvBuffer = new byte[bufferSize];
         private MemoryStream serverBuffer = new MemoryStream();
 
