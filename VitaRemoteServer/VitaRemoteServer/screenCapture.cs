@@ -184,6 +184,7 @@ namespace VitaRemoteServer
             set{ //jonathan comented this lines to test drag screen peformance not working well must find better way
                if ((value + _areaWidth) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width && value >= 0)
                 {
+					
                     _x = value;
                 }
             }
@@ -193,10 +194,10 @@ namespace VitaRemoteServer
         {
             get { return _y; }
             set {
-              //  if ((value + _areaHeight) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height && value >= 0)
-               // {
+               if ((value + _areaHeight) <= System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height && value >= 0)
+                {
                     _y = value; 
-              //  }
+               }
             }
         }
 

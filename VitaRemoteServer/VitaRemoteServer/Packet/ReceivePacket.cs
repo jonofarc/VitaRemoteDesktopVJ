@@ -34,7 +34,8 @@ namespace VitaRemoteServer
 			
 			
 			
-			
+			//jonathan 480 and 270 being the center of the screen  /50 is the speed of the movement 
+			//so the farther you drag from the center of the screen the faster it moves the capturing area
 			screenCapture.X += (480-pt.X)/50;
 			screenCapture.Y += (270-pt.Y)/50;
 			Console.WriteLine("ptY"+pt.Y);
@@ -180,7 +181,7 @@ namespace VitaRemoteServer
             if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
             {
                 Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
-                //jonathan
+                
 				 keyBoardInput.KeyPress((byte)Keys.V, true);
 			
             }
