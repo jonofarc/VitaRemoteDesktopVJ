@@ -33,9 +33,15 @@ namespace VitaRemoteServer
         {
 			
 			
-			screenCapture.X = 0;
-			screenCapture.Y = 0;
-			Console.WriteLine("ps drag");
+			
+			
+			screenCapture.X += (480-pt.X)/50;
+			screenCapture.Y += (270-pt.Y)/50;
+			Console.WriteLine("ptY"+pt.Y);
+			Console.WriteLine("ptX"+pt.X);
+			
+			
+			Console.WriteLine(" drag");
 			
            // System.Diagnostics.Debug.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString());
            // screenCapture.X -= pt.X;
@@ -44,15 +50,16 @@ namespace VitaRemoteServer
         }
 	 public static void LongPress(Point pt)
         {
-
-			Console.WriteLine("ps longpress");
+			screenCapture.X = 0;
+			screenCapture.Y = 0;
+			Console.WriteLine(" longpress");
 
 			
         }
         public static void DragStart(Point pt)
         {
 	
-			Console.WriteLine("ps dragstart");
+			Console.WriteLine(" dragstart");
 			
 
         }
@@ -60,7 +67,7 @@ namespace VitaRemoteServer
         {
 			
 
-			Console.WriteLine("ps dragend");
+			Console.WriteLine(" dragend");
 			
 	
         }
@@ -69,8 +76,8 @@ namespace VitaRemoteServer
 			
 			
 			
-			Console.WriteLine("ps drag2");
 			
+			Console.WriteLine("drag2");
        
 			
         }
@@ -92,55 +99,9 @@ namespace VitaRemoteServer
 
         public static void LeftMouseDown(Point pt)
         {
-          //  MouseInput.MousePress(MouseButtons.Left, pt);
+          MouseInput.MousePress(MouseButtons.Left, pt);
 			
 			
-			
-			//keyBoardInput.KeyPress((byte)Keys.M, true);//jonathan using mouse down as touch down screen
-			//Console.WriteLine(screenCapture.X.ToString() + "  " + screenCapture.Y.ToString()+ " " +pt.ToString() );
-          
-			//Console.WriteLine("m_xbefore: "+m_xbefore);
-			
-			screenCapture._x -= (pt.X-100);
-			screenCapture._y -= (pt.Y-100);
-			
-		
-			
-            
-			/*
-			// 
-			//Console.WriteLine("screenCapture._x "+screenCapture._x+" Screen.PrimaryScreen.WorkingArea.X "+Screen.PrimaryScreen.WorkingArea.Width);
-			//
-			//if((screenCapture._x*(-1))>Screen.PrimaryScreen.WorkingArea.Width){
-			//	screenCapture._x = 0;
-			//}
-			//if((screenCapture._y*(-1))>Screen.PrimaryScreen.WorkingArea.Height){
-			//	screenCapture._y = 0;
-			//}
-			if(m_xbefore==0){
-				m_xbefore=screenCapture._x;
-			}
-			if(m_ybefore==0){
-				m_ybefore=screenCapture._y;
-			}
-			Console.WriteLine("screenCapture._x: "+screenCapture._x+" m_xbefore "+m_xbefore);
-			if(screenCapture._x>1||screenCapture._x<m_xbefore-51||screenCapture._x>m_ybefore+51){
-				
-				screenCapture._x=m_xbefore;
-			} 
-			else{
-				m_xbefore=screenCapture._x;
-			}
-			if(screenCapture._y>1||screenCapture._y<m_ybefore-51||screenCapture._y>m_ybefore+51){
-				
-				screenCapture._y=m_ybefore;
-			} 
-			else{
-				m_ybefore=screenCapture._y;
-			}
-			Console.WriteLine("screenCapture._x: "+screenCapture._x+" m_xbefore "+m_xbefore);
-			
-			*/
         }
 
         public static void LeftMouseUp(Point pt)
@@ -227,7 +188,7 @@ namespace VitaRemoteServer
 			if (gamePadInput.PSV_RIGHT_ANALOGX == 0)
             {
                 
-                //jonathan
+              
 				 keyBoardInput.KeyPress((byte)Keys.C, false);
 				 keyBoardInput.KeyPress((byte)Keys.V, false);
 			
@@ -320,45 +281,7 @@ namespace VitaRemoteServer
                     keyBoardInput.KeyPress((byte)Keys.W, false);
                     keyBoardInput.KeyPress((byte)Keys.S, false);
                 }
-				//jonathan hack for right analog to buttons
-				/*
-			if (gamePadInput.PSV_RIGHT_ANALOGX == 1)
-            {
-              //  Cursor.Position = new Point(Cursor.Position.X + MouseSensitivity, Cursor.Position.Y);
-				keyBoardInput.KeyPress((byte)Keys.O, true);
-            }
 
-
-            if (gamePadInput.PSV_RIGHT_ANALOGX == 2)
-            {
-              //  Cursor.Position = new Point(Cursor.Position.X - MouseSensitivity, Cursor.Position.Y);
-				keyBoardInput.KeyPress((byte)Keys.P, true);
-            }
-			 if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
-                {
-                    keyBoardInput.KeyPress((byte)Keys.O, false);
-                    keyBoardInput.KeyPress((byte)Keys.P, false);
-                }
-
-
-            if (gamePadInput.PSV_RIGHT_ANALOGY == 1)
-            {
-              //  Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y + MouseSensitivity);
-				keyBoardInput.KeyPress((byte)Keys.B, true);
-            }
-
-            if (gamePadInput.PSV_RIGHT_ANALOGY == 2)
-            {
-              //  Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y - MouseSensitivity);
-				keyBoardInput.KeyPress((byte)Keys.N, true);
-            }
-			 if (gamePadInput.PSV_RIGHT_ANALOGY == 0)
-                {
-                    keyBoardInput.KeyPress((byte)Keys.N, false);
-                    keyBoardInput.KeyPress((byte)Keys.B, false);
-                }
-                */
-				// end of jonathan hack for right analog to buttons
 
             }
             else
