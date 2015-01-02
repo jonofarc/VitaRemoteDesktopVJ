@@ -74,11 +74,20 @@ namespace VitaRemoteServer
         }
 		  public static void Drag2(Point pt)
         {
+			//jonathan with this you can controll quality of image using  drag with 2 fingers horizontaly
+			int _quality=0;
+			 _quality = ((pt.X)*100)/980;
 			
 			
+			if(_quality>100){
+				_quality=100;
+			}
+			if(_quality<5){
+				_quality=5;
+			}
+			screenCapture.Quality=_quality;
 			
 			
-			Console.WriteLine("drag2");
        
 			
         }
