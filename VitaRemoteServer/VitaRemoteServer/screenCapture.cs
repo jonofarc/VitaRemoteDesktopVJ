@@ -173,7 +173,7 @@ namespace VitaRemoteServer
                 }
                 else
                 {
-                    _resWidth = 200; _resHeight = 200;
+                    _resWidth = 280; _resHeight = 280;//jonthan original value 200 ,200
                 }
                 _resolution = value;
             }
@@ -366,8 +366,7 @@ namespace VitaRemoteServer
         {
             if (image == null)
                 return null;
-			
-		
+	
 		
 				// jonathan resise image it works but image is already at 200 pixel per size
 		/*	

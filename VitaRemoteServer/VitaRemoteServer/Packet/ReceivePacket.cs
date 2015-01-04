@@ -79,8 +79,8 @@ namespace VitaRemoteServer
 			 _quality = ((pt.X)*100)/980;
 			
 			
-			if(_quality>100){
-				_quality=100;
+			if(_quality>95){
+				_quality=95;
 			}
 			if(_quality<5){
 				_quality=5;
